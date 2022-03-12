@@ -1,9 +1,14 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import classes from "./App.module.css";
+import Header from './components/Header/Header';
+import Jokes from './components/Jokes/Jokes';
 function App() {
   return (
     <>
-      <Box sx={{color:"white"}}>Hello</Box>
+      <Box className={classes.App}>
+        <Header />
+        <Jokes />
+      </Box>
     </>
   );
 }
