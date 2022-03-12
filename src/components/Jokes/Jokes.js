@@ -6,7 +6,6 @@ import Button from "@mui/material/Button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import classes from "./Jokes.module.css";
 import CustomPopover from "../CustomPopover/CustomPopover";
-import CustomTextfield from "../CustomTextfield/CustomTextfield";
 
 export default function Jokes() {
   const url = "http://api.icndb.com/jokes/random";
@@ -38,13 +37,23 @@ export default function Jokes() {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
+  /* Enryption */
+  const handleEbncryption = (joke) => {
+    console.log('Encrypted: ',joke)
+  }
+
   return (
     <>
       <Box m={3}>
         {isLoading ? (
           <Typography variant="h5">Loading...</Typography>
         ) : (
-          <CustomTextfield
+          <TextField
+            fullWidth
+            id="filled-basic"
+            label="Jokes of the day"
+            multiline
+            rows={4}
             value={joke}
           />
         )}
@@ -56,14 +65,11 @@ export default function Jokes() {
           </Box>
           <CopyToClipboard text={joke}>
             <Box width="150px" pl={1}>
-              <Button
-                onClick={popoverHandleClick}
-                fullWidth
-                variant="contained"
-              >
+              <Button onClick={popoverHandleClick} fullWidth variant="contained">
                 Copy
               </Button>
             </Box>
+            
           </CopyToClipboard>
           <CustomPopover
             id={id}
@@ -71,9 +77,20 @@ export default function Jokes() {
             anchorEl={anchorEl}
             onClose={handleClose}
           ></CustomPopover>
+          <Box width="150px" pl={1}>
+            <Button onClick={()=>handleEbncryption(joke)} fullWidth variant="contained">
+              Encryption
+            </Button>
+          </Box>
         </Box>
       </Box>
-      <CustomTextfield/>
+      <TextField
+        fullWidth
+        id="filled-basic"
+        label="Jokes of the day"
+        multiline
+        rows={4}        
+      />
     </>
   );
 }
