@@ -111,53 +111,6 @@ export default function Jokes() {
     let lowercaseJoke = joke.toLowerCase();
     console.log(lowercaseJoke);
     let decryptedString = "";
-
-    /* for (let i = 0; i < lowercaseJoke.length; i++) {
-      
-      console.log(i);
-      if (
-        lowercaseJoke[i] === "b" ||
-        lowercaseJoke[i] === "c" ||
-        lowercaseJoke[i] === "d" ||
-        lowercaseJoke[i] === "f" ||
-        lowercaseJoke[i] === "g" ||
-        lowercaseJoke[i] === "h" ||
-        lowercaseJoke[i] === "j" ||
-        lowercaseJoke[i] === "k" ||
-        lowercaseJoke[i] === "l" ||
-        lowercaseJoke[i] === "m" ||
-        lowercaseJoke[i] === "n" ||
-        lowercaseJoke[i] === "p" ||
-        lowercaseJoke[i] === "q" ||
-        lowercaseJoke[i] === "r" ||
-        lowercaseJoke[i] === "s" ||
-        lowercaseJoke[i] === "t" ||
-        lowercaseJoke[i] === "v" ||
-        lowercaseJoke[i] === "w" ||
-        lowercaseJoke[i] === "x" ||
-        lowercaseJoke[i] === "y" ||
-        lowercaseJoke[i] === "z"
-      ) {
-        decryptedString = decryptedString + lowercaseJoke[i];
-        i = i + 2;
-        console.log(decryptedString + "---" + i);
-      }
-
-      // if space then append as it is
-      else if (lowercaseJoke[i] === " ") {
-        decryptedString = decryptedString + lowercaseJoke[i];
-        
-        console.log(decryptedString + "---" + i);
-      }
-
-      // else double the consonant and put o in between
-      else {
-        decryptedString = decryptedString + lowercaseJoke[i];
-        
-        console.log(decryptedString + "---" + i);
-      }
-    } */
-
     for (let i = 0; i < lowercaseJoke.length; i++) {
       console.log(i);
       if (
@@ -167,11 +120,7 @@ export default function Jokes() {
         lowercaseJoke[i] === "o" ||
         lowercaseJoke[i] === "u"
       ) {
-        /* decryptedString = decryptedString + lowercaseJoke[i];
-        i = i + 2;
-        console.log(decryptedString + "---" + i); */
         decryptedString = decryptedString + lowercaseJoke[i];
-
         console.log(decryptedString + "---" + i);
       }
 
@@ -181,12 +130,7 @@ export default function Jokes() {
 
         console.log(decryptedString + "---" + i);
       }
-
-      // else double the consonant and put o in between
       else {
-        /* decryptedString = decryptedString + lowercaseJoke[i];
-        
-        console.log(decryptedString + "---" + i); */
         decryptedString = decryptedString + lowercaseJoke[i];
         i = i + 2;
         console.log(decryptedString + "---" + i);
