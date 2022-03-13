@@ -4,38 +4,38 @@ import Button from "@mui/material/Button";
 import CustomTextfield from "../CustomTextfield/CustomTextfield";
 import classes from "./Decrypted.module.css";
 
-export default function Decrypted(props) {
+export default function Decrypted({encryptedJoke}) {
   const [decrypted, setDecrypted] = useState("");
-  const handleDecryption = (EncryptedJoke) => {
+  const handleDecryption = (encryptedJoke) => {
     let decryptedString = "";
-    for (let i = 0; i < EncryptedJoke.length; i++) {
+    for (let i = 0; i < encryptedJoke.length; i++) {
       if (
-        EncryptedJoke[i] === "a" ||
-        EncryptedJoke[i] === "e" ||
-        EncryptedJoke[i] === "i" ||
-        EncryptedJoke[i] === "o" ||
-        EncryptedJoke[i] === "u" ||
-        EncryptedJoke[i] === "A" ||
-        EncryptedJoke[i] === "E" ||
-        EncryptedJoke[i] === "I" ||
-        EncryptedJoke[i] === "O" ||
-        EncryptedJoke[i] === "U" ||
-        EncryptedJoke[i] === "1" ||
-        EncryptedJoke[i] === "2" ||
-        EncryptedJoke[i] === "3" ||
-        EncryptedJoke[i] === "4" ||
-        EncryptedJoke[i] === "5" ||
-        EncryptedJoke[i] === "6" ||
-        EncryptedJoke[i] === "7" ||
-        EncryptedJoke[i] === "8" ||
-        EncryptedJoke[i] === "9" ||
-        EncryptedJoke[i] === "0"
+        encryptedJoke[i] === "a" ||
+        encryptedJoke[i] === "e" ||
+        encryptedJoke[i] === "i" ||
+        encryptedJoke[i] === "o" ||
+        encryptedJoke[i] === "u" ||
+        encryptedJoke[i] === "A" ||
+        encryptedJoke[i] === "E" ||
+        encryptedJoke[i] === "I" ||
+        encryptedJoke[i] === "O" ||
+        encryptedJoke[i] === "U" ||
+        encryptedJoke[i] === "1" ||
+        encryptedJoke[i] === "2" ||
+        encryptedJoke[i] === "3" ||
+        encryptedJoke[i] === "4" ||
+        encryptedJoke[i] === "5" ||
+        encryptedJoke[i] === "6" ||
+        encryptedJoke[i] === "7" ||
+        encryptedJoke[i] === "8" ||
+        encryptedJoke[i] === "9" ||
+        encryptedJoke[i] === "0"
       ) {
-        decryptedString = decryptedString + EncryptedJoke[i];
-      } else if (EncryptedJoke[i] === " ") {
-        decryptedString = decryptedString + EncryptedJoke[i];
+        decryptedString = decryptedString + encryptedJoke[i];
+      } else if (encryptedJoke[i] === " ") {
+        decryptedString = decryptedString + encryptedJoke[i];
       } else {
-        decryptedString = decryptedString + EncryptedJoke[i];
+        decryptedString = decryptedString + encryptedJoke[i];
         i += 2;
       }
     }
@@ -49,7 +49,7 @@ export default function Decrypted(props) {
         <Box className={classes.button} m={2}>
           <Box width="150px">
             <Button
-              onClick={() => handleDecryption(props.joke)}
+              onClick={() => handleDecryption(encryptedJoke)}
               fullWidth
               variant="contained"
             >

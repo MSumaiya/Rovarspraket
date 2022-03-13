@@ -5,10 +5,8 @@ import classes from "./Encrypted.module.css";
 import CustomTextfield from "../CustomTextfield/CustomTextfield";
 import Decrypted from "../Decrypted/Decrypted";
 
-export default function Encrypted(props) {
-  let joke = props.joke;
+export default function Encrypted({joke}) {
   const [encrypted, setEncrypted] = useState("");
-
   /* Enryption */
   const handleEncryption = (joke) => {
     let encryptedString = "";
@@ -62,7 +60,7 @@ export default function Encrypted(props) {
           </Box>
         </Box>
       </Box>
-      <Decrypted joke={encrypted}/>
+      <Decrypted encryptedJoke={encrypted}/>
     </>
   );
 }

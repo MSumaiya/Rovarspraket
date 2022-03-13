@@ -9,25 +9,27 @@ import Encrypted from "./../Encrypted/Encrypted";
 export default function Jokes() {
   const url = "http://api.icndb.com/jokes/random";
   const [isLoading, setIsLoading] = useState(true);
-  const [joke, setjoke] = useState("");
-  const [errorMessage, setErrorMessage] = useState(false);
-  const [message, setMessage] = useState("");
+  const [joke, setJoke] = useState(null);
+  const [error, setError] = useState(null);
 
-  async function generateRandomJoke() {
+  function generateRandomJoke() {
     setIsLoading(true);
     fetch(url)
       .then((res) => {
+        if (!res.ok) {
+          throw Error("Failed to fetch");
+        }
         return res.json();
       })
       .then((data) => {
-        setjoke(data.value.joke);
+        setJoke(data.value.joke);
         setIsLoading(false);
-        setErrorMessage(false);
+        setError("");
       })
       .catch((err) => {
+        setJoke(null);
         setIsLoading(false);
-        setErrorMessage(true);
-        setMessage("Something went wrong");
+        setError(err.message);
       });
   }
 
@@ -40,16 +42,9 @@ export default function Jokes() {
   return (
     <>
       <Box m={3}>
-        {isLoading ? (
-          <Typography variant="h5">Loading...</Typography>
-        ) : (
-          <CustomTextfield value={joke} />
-        )}
-        {errorMessage && (
-          <>
-            <Typography variant="h5">{message}</Typography>
-          </>
-        )}
+        {error && <Typography variant="h5">{error}</Typography>}
+        {isLoading && <Typography variant="h5">Loading...</Typography>}
+        {joke && <CustomTextfield value={joke} />}
 
         <Box className={classes.button} m={2}>
           <Box width="200px" pr={1}>
