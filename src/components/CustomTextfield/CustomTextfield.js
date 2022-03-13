@@ -1,16 +1,16 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-export default function CustomTextfield(props) {
+export default function CustomTextfield({label, value}) {
   return (
     <>
       <TextField
         fullWidth
         id="filled-basic"
-        label="Jokes of the day"
+        label={label}
         multiline
-        rows={4}
-        value={props.value}
+        rows={2}
+        value={value}
       />
     </>
   );

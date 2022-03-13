@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import classes from "./Jokes.module.css";
 import CustomTextfield from "../CustomTextfield/CustomTextfield";
 import Encrypted from "./../Encrypted/Encrypted";
+import CustomButton from "../CustomButton/CustomButton";
 
 export default function Jokes() {
   const url = "http://api.icndb.com/jokes/random";
@@ -44,15 +43,8 @@ export default function Jokes() {
       <Box m={3}>
         {error && <Typography variant="h5">{error}</Typography>}
         {isLoading && <Typography variant="h5">Loading...</Typography>}
-        {joke && <CustomTextfield value={joke} />}
-
-        <Box className={classes.button} m={2}>
-          <Box width="200px" pr={1}>
-            <Button onClick={generateRandomJoke} fullWidth variant="contained">
-              Generate Jokes
-            </Button>
-          </Box>
-        </Box>
+        {joke && <CustomTextfield label="Joke of the day" value={joke} />}
+        <CustomButton onClick={generateRandomJoke} buttonName="Generate Jokes"/>
       </Box>
       <Encrypted joke={joke} />
     </>

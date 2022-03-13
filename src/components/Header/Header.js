@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <>
         <Box p={1} className={classes.header}>
-            <Typography sx={{fontWeight:"bold"}} variant='h2'>Rövarspråk game</Typography>
+            <Typography sx={{fontWeight:"bold"}} variant='h4'>Rövarspråk game</Typography>
         </Box>
     </>
   )

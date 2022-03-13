@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import classes from "./Encrypted.module.css";
 import CustomTextfield from "../CustomTextfield/CustomTextfield";
 import Decrypted from "../Decrypted/Decrypted";
+import CustomButton from "../CustomButton/CustomButton";
 
 export default function Encrypted({joke}) {
   const [encrypted, setEncrypted] = useState("");
-  /* Enryption */
   const handleEncryption = (joke) => {
     let encryptedString = "";
     for (let i = 0; i < joke.length; i++) {
@@ -42,23 +40,11 @@ export default function Encrypted({joke}) {
     }
     setEncrypted(encryptedString);
   };
-
-
   return (
     <>
       <Box m={3}>
-        <CustomTextfield value={encrypted} />
-        <Box mt={2} className={classes.button}>
-          <Box width="150px">
-            <Button
-              onClick={() => handleEncryption(joke)}
-              fullWidth
-              variant="contained"
-            >
-              Encryption
-            </Button>
-          </Box>
-        </Box>
+        <CustomTextfield label="Encrypted Joke" value={encrypted} />
+        <CustomButton onClick={() => handleEncryption(joke)} buttonName="Encrypt the joke"/>
       </Box>
       <Decrypted encryptedJoke={encrypted}/>
     </>

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import CustomTextfield from "../CustomTextfield/CustomTextfield";
-import classes from "./Decrypted.module.css";
+import CustomButton from "../CustomButton/CustomButton";
 
 export default function Decrypted({encryptedJoke}) {
   const [decrypted, setDecrypted] = useState("");
@@ -45,18 +44,8 @@ export default function Decrypted({encryptedJoke}) {
   return (
     <>
       <Box m={3}>
-        <CustomTextfield value={decrypted} />
-        <Box className={classes.button} m={2}>
-          <Box width="150px">
-            <Button
-              onClick={() => handleDecryption(encryptedJoke)}
-              fullWidth
-              variant="contained"
-            >
-              Decryption
-            </Button>
-          </Box>
-        </Box>
+        <CustomTextfield label="Decrypted Joke" value={decrypted} />
+        <CustomButton onClick={() => handleDecryption(encryptedJoke)} buttonName="Decrypt the joke"/>
       </Box>
     </>
   );
