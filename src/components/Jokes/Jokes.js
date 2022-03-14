@@ -6,7 +6,7 @@ import Encrypted from "./../Encrypted/Encrypted";
 import CustomButton from "../CustomButton/CustomButton";
 
 export default function Jokes() {
-  const url = "http://api.icndb.com/jokes/random";
+  const url = "https://api.icndb.com/jokes/random";
   const [isLoading, setIsLoading] = useState(true);
   const [joke, setJoke] = useState(null);
   const [error, setError] = useState(null);
@@ -44,7 +44,10 @@ export default function Jokes() {
         {error && <Typography variant="h5">{error}</Typography>}
         {isLoading && <Typography variant="h5">Loading...</Typography>}
         {joke && <CustomTextfield label="Joke of the day" value={joke} />}
-        <CustomButton onClick={generateRandomJoke} buttonName="Generate Jokes"/>
+        <CustomButton
+          onClick={generateRandomJoke}
+          buttonName="Generate Jokes"
+        />
       </Box>
       <Encrypted joke={joke} />
     </>
