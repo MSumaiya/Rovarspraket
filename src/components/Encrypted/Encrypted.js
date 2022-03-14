@@ -7,35 +7,13 @@ import CustomButton from "../CustomButton/CustomButton";
 export default function Encrypted({joke}) {
   const [encrypted, setEncrypted] = useState("");
   const handleEncryption = (joke) => {
+   const regex = /[b-df-hj-np-tv-z]+/i;
     let encryptedString = "";
     for (let i = 0; i < joke.length; i++) {
-      if (
-        joke[i] === "a" ||
-        joke[i] === "e" ||
-        joke[i] === "i" ||
-        joke[i] === "o" ||
-        joke[i] === "u" ||
-        joke[i] === "A" ||
-        joke[i] === "E" ||
-        joke[i] === "I" ||
-        joke[i] === "O" ||
-        joke[i] === "U" ||
-        joke[i] === "1" ||
-        joke[i] === "2" ||
-        joke[i] === "3" ||
-        joke[i] === "4" ||
-        joke[i] === "5" ||
-        joke[i] === "6" ||
-        joke[i] === "7" ||
-        joke[i] === "8" ||
-        joke[i] === "9" ||
-        joke[i] === "0"
-      ) {
-        encryptedString = encryptedString + joke[i];
-      } else if (joke[i] === " ") {
-        encryptedString = encryptedString + joke[i];
-      } else {
+      if (regex.test(joke[i])) {
         encryptedString = encryptedString + joke[i] + "o" + joke[i];
+      } else {
+        encryptedString = encryptedString + joke[i];
       }
     }
     setEncrypted(encryptedString);
