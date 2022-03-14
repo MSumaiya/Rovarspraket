@@ -6,7 +6,7 @@ import Encrypted from "./../Encrypted/Encrypted";
 import CustomButton from "../CustomButton/CustomButton";
 
 export default function Jokes() {
-  const url = "https://api.icndb.com/jokes/random";
+  const url = "http://api.icndb.com/jokes/random";
   const [isLoading, setIsLoading] = useState(true);
   const [joke, setJoke] = useState(null);
   const [error, setError] = useState(null);
