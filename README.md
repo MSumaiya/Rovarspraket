@@ -19,6 +19,7 @@ The user can also generate random jokes “joke of the day” from the joke API 
 
 ## Technology Stack
 - JavaScript(React)
+- Material UI
 - HTML
 - CSS
 ## Links
