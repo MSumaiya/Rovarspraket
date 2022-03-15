@@ -31,7 +31,7 @@ The user can also generate random jokes “joke of the day” from the joke API 
 
 ## How to run this app at your local machine
 - Step 1: Run the following command in command prompt in your desired folder:- git clone https://github.com/MSumaiya/Rovarspraket.git
-- Step 2: run the follwing command in command prompt in your desired folder(where you just cloned ):- cd .\Rovarspraket
+- Step 2: run the follwing command in command prompt in your desired folder(where you just cloned ):- cd .\rovarspraket
 - Step 3: run the follwing command in command prompt:- npm install
 - Step 4: run the follwing command in command prompt:- npm start
 
