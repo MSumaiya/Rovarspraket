@@ -13,8 +13,8 @@ The user can also generate random jokes “joke of the day” from the joke API 
 - User is able to decode the encoded text or joke.
 - Shows a good way to fetch API and error handling.
 - Created separate reusable components.
-- Completely responsive 
-- Used Material UI for better design
+- Completely responsive. 
+- Used Material UI for better design.
 
 ## Technology Stack
 - JavaScript(React)
