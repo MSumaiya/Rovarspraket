@@ -4,7 +4,7 @@
 
 I created a simple web UI “Rövarspråket translator" using React
 The user is able to enter text to be encoded or decoded into and from Rövarspråket
-The user can also generate random jokes “joke of the day” from the given joke API - https://sv443.net/jokeapi/v2/
+The user can also generate random jokes “joke of the day” from the joke API - http://api.icndb.com/jokes/random
 
 ## Key features:
 
@@ -17,6 +17,18 @@ The user can also generate random jokes “joke of the day” from the given jok
 - Shows a good way to fetch API and error handling.
 - Created separate reusable component for Button and input text field.
 
+## Technology Stack
+- JavaScript(React)
+- HTML
+- CSS
+## Links
+
+- [Repo](https://github.com/MSumaiya/Rovarspraket "Rovarspraket Repo")
+
+- [Live](https://rovarspraket-translator.netlify.app/ "Live View")
+
+- [API](http://api.icndb.com/jokes/random "API")
+
 ## How to run this app at your local machine
 - Step 1: Run the following command in command prompt in your desired folder:- git clone https://github.com/MSumaiya/Rovarspraket.git
 - Step 2: run the follwing command in command prompt in your desired folder(where you just cloned ):- cd .\Rovarspraket
@@ -25,9 +37,6 @@ The user can also generate random jokes “joke of the day” from the given jok
 
 ## Future Plan 
 Next time I would love to add Typescript in this project.
-
-## suggestion 
-- Material UI can be a requirement to implment the app as it is very popular in react community. 
  
 ## Author
 Mirza Sumaiya Alam
