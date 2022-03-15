@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import CustomTextfield from "../CustomTextfield/CustomTextfield";
@@ -37,12 +37,6 @@ export default function Jokes() {
         setUserInput("");
       });
   }
-
-  /* useEffect(() => {
-    setTimeout(() => {
-      generateRandomJoke();
-    }, 1000);
-  }, []); */
 
   return (
     <>
