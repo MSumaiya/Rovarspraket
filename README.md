@@ -23,7 +23,7 @@ The user can also generate random jokes “joke of the day” from the given jok
 - Step 3: run the follwing command in command prompt:- npm install
 - Step 4: run the follwing command in command prompt:- npm start
 
-## Limitations/ Future Plan 
+## Future Plan 
 Next time I would love to add Typescript in this project.
 
 ## suggestion 
