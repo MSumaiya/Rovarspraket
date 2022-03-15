@@ -7,12 +7,17 @@ import CustomButton from "../CustomButton/CustomButton";
 
 export default function Jokes() {
   const url = "http://api.icndb.com/jokes/random";
-  const [isLoading, setIsLoading] = useState(true);
-  const [joke, setJoke] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [joke, setJoke] = useState("");
   const [error, setError] = useState(null);
-
+  const [userInput, setUserInput] = useState("");
+  const handleChange = (event) => {
+    setUserInput(event.target.value);
+    setJoke("");
+  };
   function generateRandomJoke() {
     setIsLoading(true);
+    setUserInput("");
     fetch(url)
       .then((res) => {
         if (!res.ok) {
@@ -29,27 +34,32 @@ export default function Jokes() {
         setJoke(null);
         setIsLoading(false);
         setError(err.message);
+        setUserInput("");
       });
   }
 
-  useEffect(() => {
+  /* useEffect(() => {
     setTimeout(() => {
       generateRandomJoke();
     }, 1000);
-  }, []);
+  }, []); */
 
   return (
     <>
       <Box m={3}>
         {error && <Typography variant="h5">{error}</Typography>}
         {isLoading && <Typography variant="h5">Loading...</Typography>}
-        {joke && <CustomTextfield label="Joke of the day" value={joke} />}
+        <CustomTextfield
+          onChange={handleChange}
+          label="Write a text or press the 'Generate a Joke' button beloow to get Joke of the day"
+          value={joke || userInput}
+        />
         <CustomButton
           onClick={generateRandomJoke}
-          buttonName="Generate Jokes"
+          buttonName="Generate a Joke"
         />
       </Box>
-      <Encrypted joke={joke} />
+      <Encrypted joke={joke || userInput} />
     </>
   );
 }

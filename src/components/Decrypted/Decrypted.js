@@ -24,8 +24,8 @@ export default function Decrypted({encryptedJoke}) {
   return (
     <>
       <Box m={3}>
-        <CustomTextfield label="Decrypted Joke" value={decrypted} />
-        <CustomButton onClick={() => handleDecryption(encryptedJoke)} buttonName="Decrypt the joke"/>
+        <CustomTextfield label="Decoded" value={decrypted} />
+        <CustomButton onClick={() => handleDecryption(encryptedJoke)} buttonName="Decode"/>
       </Box>
     </>
   );
