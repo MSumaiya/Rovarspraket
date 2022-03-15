@@ -2,26 +2,29 @@
 
 ## Project Description
 
-I developed a SPA (Single Page Application) with React Js. The swipe-select component enabled a left-to-right swipable area suitable for selecting one of several option in a fun and interactive way. It’s built on top of a standard select element, which is enhanced through JS so that the swipe interface is presented instead. The select element remains in the DOM and reflects the current state, meaning that this component can be included in any form. Attributes on the select element, like name, is thus set just as normal.
+I created a simple web UI “Rövarspråket translator" using React
+The user is able to enter text to be encoded or decoded into and from Rövarspråket
+The user can also generate random jokes “joke of the day” from the given joke API - https://sv443.net/jokeapi/v2/
 
 ## Key features:
 
 - A nice, self-contained component that is easy to configure.
-- Work well with touch, mouse, and keyboard.
 - Completely responsive 
 - Used Material UI for better design
-- React Swipe component
-- Shows a good way to fetch JSON as the source of component values.
-- Created separate component for Typography and color variable
+- User can enter text in the input field and also can generate random joke in the same input field .
+- User is able to encode the text and generated random joke.
+- User is able to decode the encoded text or joke.
+- Shows a good way to fetch API and error handling.
+- Created separate reusable component for Button and input text field.
 
 ## How to run this app at your local machine
-- Step 1: Run the following command in command prompt in your desired folder:- git clone https://github.com/MSumaiya/Swipe-Select-Project.git
-- Step 2: run the follwing command in command prompt in your desired folder(where you just cloned MovieDatabase):- cd .\swipe-select-project
+- Step 1: Run the following command in command prompt in your desired folder:- git clone https://github.com/MSumaiya/Rovarspraket.git
+- Step 2: run the follwing command in command prompt in your desired folder(where you just cloned ):- cd .\Rovarspraket
 - Step 3: run the follwing command in command prompt:- npm install
 - Step 4: run the follwing command in command prompt:- npm start
 
 ## Limitations/ Future Plan 
-Next time I would love to implement this project using Stencil.
+Next time I would love to add Typescript in this project.
 
 ## suggestion 
 - Material UI can be a requirement to implment the app as it is very popular in react community. 
