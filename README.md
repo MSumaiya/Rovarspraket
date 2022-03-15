@@ -15,7 +15,7 @@ The user can also generate random jokes “joke of the day” from the joke API 
 - User is able to encode the text and generated random joke.
 - User is able to decode the encoded text or joke.
 - Shows a good way to fetch API and error handling.
-- Created separate reusable component for Button and input text field.
+- Created separate reusable components.
 
 ## Technology Stack
 - JavaScript(React)
