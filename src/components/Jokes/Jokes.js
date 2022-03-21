@@ -45,7 +45,7 @@ export default function Jokes() {
         {isLoading && <Typography variant="h5">Loading...</Typography>}
         <CustomTextfield
           onChange={handleChange}
-          label="Write a text or press the 'Generate a Joke' button beloow to get Joke of the day"
+          label="Write a text or press the 'Generate a Joke' button below to get Joke of the day"
           value={joke || userInput}
         />
         <CustomButton
