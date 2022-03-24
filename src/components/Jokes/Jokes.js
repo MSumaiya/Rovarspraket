@@ -11,10 +11,19 @@ export default function Jokes() {
   const [joke, setJoke] = useState("");
   const [error, setError] = useState(null);
   const [userInput, setUserInput] = useState("");
+
+  /* New */
+  const [userInputPressed, setuserInputPressed] = useState(false);
+  const [generateJokeButtonPressed, setGenerateJokeButtonPressed] =
+    useState(false);
+  /* New */
+
   const handleChange = (event) => {
     setUserInput(event.target.value);
     setJoke("");
+    setuserInputPressed(!userInputPressed);
   };
+
   function generateRandomJoke() {
     setIsLoading(true);
     setUserInput("");
@@ -36,6 +45,10 @@ export default function Jokes() {
         setError(err.message);
         setUserInput("");
       });
+
+    /* New */
+    setGenerateJokeButtonPressed(!generateJokeButtonPressed);
+    /* New */
   }
 
   return (
@@ -53,7 +66,11 @@ export default function Jokes() {
           buttonName="Generate a Joke"
         />
       </Box>
-      <Encrypted joke={joke || userInput} />
+      <Encrypted
+        joke={joke || userInput}
+        userInputPressed={userInputPressed}
+        generateJokeButtonPressed={generateJokeButtonPressed}
+      />
     </>
   );
 }

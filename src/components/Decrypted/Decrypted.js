@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import CustomTextfield from "../CustomTextfield/CustomTextfield";
 import CustomButton from "../CustomButton/CustomButton";
 
-export default function Decrypted({encryptedJoke}) {
+export default function Decrypted({
+  encryptedJoke,
+  userInputPressed,
+  generateJokeButtonPressed,
+}) {
   const [decrypted, setDecrypted] = useState("");
   const handleDecryption = (encryptedJoke) => {
     const regex = /[b-df-hj-np-tv-z]+/i;
     let decryptedString = "";
     for (let i = 0; i < encryptedJoke.length; i++) {
-      if (
-        regex.test(encryptedJoke[i])
-      ) {
+      if (regex.test(encryptedJoke[i])) {
         decryptedString = decryptedString + encryptedJoke[i];
         i += 2;
       } else {
@@ -21,11 +23,18 @@ export default function Decrypted({encryptedJoke}) {
     setDecrypted(decryptedString);
   };
 
+  useEffect(() => {
+    setDecrypted("");
+  }, [userInputPressed, generateJokeButtonPressed]);
+
   return (
     <>
       <Box m={3}>
         <CustomTextfield label="Decoded" value={decrypted} />
-        <CustomButton onClick={() => handleDecryption(encryptedJoke)} buttonName="Decode"/>
+        <CustomButton
+          onClick={() => handleDecryption(encryptedJoke)}
+          buttonName="Decode"
+        />
       </Box>
     </>
   );
